@@ -3,7 +3,7 @@
 * @param {*} input The input object to check
 * @returns {array} The cohersed version of input - or just input if its already an array
 */
-exports = input =>
+module.exports = input =>
 	input == 'object' && Object.prototype.toString.call(input) == '[object Array]'
 	? input
 	: [input];

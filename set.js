@@ -7,7 +7,7 @@
 * @param {*} value The value to set
 * @return {*} The traversed object
 */
-exports.setPath = (item, path, value) => {
+module.exports = (item, path, value) => {
 	var target = item;
 	var pathPieces = path.split('.');
 	for (var i = 0; i < pathPieces.length - 1; i++) {

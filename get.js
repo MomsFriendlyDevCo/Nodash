@@ -5,7 +5,7 @@
 * @param {string} path The dotted notation path to retrieve
 * @return {*} The value of the traversed field or undefined
 */
-exports.get = (item, path) => {
+module.exports = (item, path) => {
 	var target = item;
 	var pathPieces = path.split('.');
 	for (var i = 0; i < pathPieces.length; i++) {

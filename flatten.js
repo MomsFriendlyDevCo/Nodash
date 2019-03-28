@@ -4,4 +4,4 @@
 * @param {array <array>} arr Array-of-arrays
 * @return {array} One level flatter input
 */
-exports = arr => [].concat.apply([], arr);
+module.exports = arr => [].concat.apply([], arr);

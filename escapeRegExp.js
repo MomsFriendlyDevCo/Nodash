@@ -3,4 +3,4 @@
 * @param {string} str The input string
 * @returns {string} An escaped RegExp compatible string
 */
-exports = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+module.exports = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
