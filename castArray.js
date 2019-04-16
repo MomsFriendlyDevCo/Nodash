@@ -4,6 +4,6 @@
 * @returns {array} The cohersed version of input - or just input if its already an array
 */
 module.exports = input =>
-	input == 'object' && Object.prototype.toString.call(input) == '[object Array]'
+	typeof input == 'object' && Object.prototype.toString.call(input) == '[object Array]'
 	? input
 	: [input];
