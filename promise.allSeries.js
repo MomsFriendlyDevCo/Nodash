@@ -19,5 +19,5 @@ module.exports = promises =>
 				typeof promise == 'function' ? promise() : promise
 			)
 		)
-	, Promise.resolve()
-);
+		, Promise.resolve()
+	);
