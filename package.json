@@ -1,0 +1,31 @@
+{
+  "name": "@momsfriendlydevco/nodash",
+  "version": "0.0.0",
+  "description": "Minimal self-contained Lodash / generic function implementations",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MomsFriendlyDevCo/Nodash.git"
+  },
+  "keywords": [
+    "nodash",
+    "minimal",
+    "standalone"
+  ],
+  "author": "Matt Carter <m@ttcarter.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MomsFriendlyDevCo/Nodash/issues"
+  },
+  "homepage": "https://github.com/MomsFriendlyDevCo/Nodash#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.3"
+  }
+}
