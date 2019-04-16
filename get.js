@@ -4,6 +4,7 @@
 * @param {*} item The item to traverse
 * @param {string} path The dotted notation path to retrieve
 * @return {*} The value of the traversed field or undefined
+* @url https://github.com/MomsFriendlyDevCo/Nodash
 */
 module.exports = (item, path) => {
 	var target = item;

@@ -6,6 +6,7 @@
 * @param {string} path The dotted notation path to retrieve
 * @param {*} value The value to set
 * @return {*} The traversed object
+* @url https://github.com/MomsFriendlyDevCo/Nodash
 */
 module.exports = (item, path, value) => {
 	var target = item;

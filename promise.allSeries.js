@@ -10,6 +10,7 @@
 *     setTimeout(()=> { console.log('EVAL', index, delay); resolve(); }, delay);
 *   }))
 * )
+* @url https://github.com/MomsFriendlyDevCo/Nodash
 */
 module.exports = promises =>
 	promises.reduce((chain, promise) =>
