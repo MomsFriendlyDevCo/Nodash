@@ -5,6 +5,4 @@
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
 module.exports = input =>
-	typeof input == 'object' && Object.prototype.toString.call(input) == '[object Array]'
-	? input
-	: [input];
+	Array.isArray(input) ? input : new Array(input);
