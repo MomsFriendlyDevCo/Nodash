@@ -11,6 +11,7 @@ module.exports = {
 	omit: require('./omit'),
 	pick: require('./pick'),
 	promise: {
+		allLimit: require('./promise.allLimit'),
 		allSeries: require('./promise.allSeries'),
 	},
 	set: require('./set'),
