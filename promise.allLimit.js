@@ -17,6 +17,8 @@
 * )
 */
 module.exports = (limit, promises) => new Promise((resolve, reject) => {
+	if (!isFinite(limit)) throw new Error('First parameter must be the number of promise threads');
+
 	var promiseChecker = function(queue) {
 		if (!queue.promisesRemaining.length && queue.running == 0) return resolve(queue.output);
 
