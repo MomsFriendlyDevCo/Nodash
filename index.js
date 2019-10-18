@@ -13,6 +13,7 @@ module.exports = {
 	promise: {
 		allLimit: require('./promise.allLimit'),
 		allSeries: require('./promise.allSeries'),
+		timeout: require('./promise.timeout'),
 	},
 	set: require('./set'),
 };
