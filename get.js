@@ -10,7 +10,10 @@ module.exports = (item, path) => {
 	var target = item;
 	var pathPieces = path.split('.');
 	for (var i = 0; i < pathPieces.length; i++) {
-		if (!target[pathPieces[i]]) break;
+		if (!target[pathPieces[i]]) {
+			target = undefined;
+			break;
+		}
 		target = target[pathPieces[i]];
 	};
 	return target;
