@@ -16,4 +16,5 @@ module.exports = {
 		timeout: require('./promise.timeout'),
 	},
 	set: require('./set'),
+	throttle: require('./throttle'),
 };
