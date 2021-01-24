@@ -22,4 +22,24 @@ describe('_.promise.allSeries', ()=> {
 		})
 	});
 
+	it('should fail correctly',  function() {
+		var ran = [];
+
+		return _.promise.allSeries(
+			[1, 2, false, 3, 4].map(val => ()=> new Promise((resolve, reject) => {
+				if (val === false) {
+					reject(val);
+				} else {
+					ran.push(val);
+					resolve(val);
+				}
+			}))
+		)
+			.then(()=> expect.fail)
+			.catch(e => {
+				expect(e).to.deep.equal(false);
+				expect(ran).to.deep.equal([1, 2]);
+			})
+	});
+
 });
