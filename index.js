@@ -12,6 +12,7 @@ module.exports = {
 	pick: require('./pick'),
 	promise: {
 		allLimit: require('./promise.allLimit'),
+		allObject: require('./promise.allObject'),
 		allSeries: require('./promise.allSeries'),
 		timeout: require('./promise.timeout'),
 	},
