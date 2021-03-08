@@ -4,6 +4,7 @@
 */
 module.exports = {
 	castArray: require('./castArray'),
+	camelCase: require('./camelCase'),
 	escapeRegExp: require('./escapeRegExp'),
 	flatten: require('./flatten'),
 	get: require('./get'),
