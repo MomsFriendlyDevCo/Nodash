@@ -9,6 +9,7 @@ module.exports = {
 	flatten: require('./flatten'),
 	get: require('./get'),
 	isArary: require('./isArray'),
+	mapValues: require('./mapValues'),
 	omit: require('./omit'),
 	pick: require('./pick'),
 	promise: {
