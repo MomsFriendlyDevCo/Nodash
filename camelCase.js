@@ -6,7 +6,9 @@
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
 module.exports = input => input
-	.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
-		index === 0 ? word.toLowerCase() : word.toUpperCase()
+	.split(/[\s\-]/)
+	.map((word, offset) => offset == 0
+		? word.toLowerCase()
+		: word.substr(0, 1).toUpperCase() + word.substr(1).toLowerCase()
 	)
-	.replace(/\s+/g, '');
+	.join('')
