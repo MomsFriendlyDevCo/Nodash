@@ -22,5 +22,8 @@ module.exports = {
 		escape: require('./regexp.escape'),
 	},
 	set: require('./set'),
+	string: {
+		replaceLast: require('./string.replaceLast'),
+	},
 	throttle: require('./throttle'),
 };
