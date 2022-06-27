@@ -5,7 +5,6 @@
 module.exports = {
 	castArray: require('./castArray'),
 	camelCase: require('./camelCase'),
-	escapeRegExp: require('./escapeRegExp'),
 	flatten: require('./flatten'),
 	get: require('./get'),
 	isArary: require('./isArray'),
@@ -18,6 +17,9 @@ module.exports = {
 		allObject: require('./promise.allObject'),
 		allSeries: require('./promise.allSeries'),
 		timeout: require('./promise.timeout'),
+	},
+	regexp: {
+		escape: require('./regexp.escape'),
 	},
 	set: require('./set'),
 	throttle: require('./throttle'),
