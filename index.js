@@ -12,6 +12,7 @@ module.exports = {
 	mapValues: require('./mapValues'),
 	omit: require('./omit'),
 	pick: require('./pick'),
+	pipe: require('./pipe'),
 	promise: {
 		allLimit: require('./promise.allLimit'),
 		allObject: require('./promise.allObject'),
