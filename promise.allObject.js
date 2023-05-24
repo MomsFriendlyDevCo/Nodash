@@ -12,13 +12,15 @@
 * )
 * .then(output => ...) // output = {fooPromise: result, barPromise: result}
 */
-module.exports = promises => Promise.resolve()
-	.then(()=> Promise.all( // Assume all object values are promises (or at least resolvable)
-		Object.values(promises)
-	))
-	.then(result => { // Take result and splat it back into an object
-		var keys = Object.keys(promises);
-		return Object.fromEntries(
-			result.map((value, offset) => [keys[offset], value])
-		)
-	});
+export default function promiseAllObject(promises) {
+	return Promise.resolve()
+		.then(()=> Promise.all( // Assume all object values are promises (or at least resolvable)
+			Object.values(promises)
+		))
+		.then(result => { // Take result and splat it back into an object
+			let keys = Object.keys(promises);
+			return Object.fromEntries(
+				result.map((value, offset) => [keys[offset], value])
+			)
+		});
+}

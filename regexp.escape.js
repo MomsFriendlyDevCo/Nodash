@@ -4,4 +4,6 @@
 * @returns {string} An escaped RegExp compatible string
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+export default function regexpEscape(str) {
+	return str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+}

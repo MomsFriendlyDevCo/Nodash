@@ -1,5 +1,5 @@
-var _ = require('..');
-var expect = require('chai').expect;
+import _ from '#nodash';
+import {expect} from 'chai';
 
 describe('_.replaceLast', ()=> {
 

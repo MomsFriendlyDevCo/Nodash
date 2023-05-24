@@ -1,10 +1,10 @@
-var _ = require('..');
-var expect = require('chai').expect;
+import _ from '#nodash';
+import {expect} from 'chai';
 
 describe('_.mapValues', ()=> {
 
 	it('should correctly map values from an object', ()=> {
-		var fruits = {
+		let fruits = {
 			apple: {name: 'apple2', number: 5},
 			orange: {name: 'orange2', number: 10},
 		};

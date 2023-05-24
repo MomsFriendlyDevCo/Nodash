@@ -1,11 +1,11 @@
-var _ = require('..');
-var expect = require('chai').expect;
+import _ from '#nodash';
+import {expect} from 'chai';
 
-describe('_.throttle', ()=> {
+describe('_.function.throttle', ()=> {
 
 	it('should throttle function calls (once)', done => {
-		var called = 0;
-		var func = _.throttle(()=> called++, 1000);
+		let called = 0;
+		let func = _.function.throttle(()=> called++, 1000);
 
 		func();
 		func();
@@ -20,8 +20,8 @@ describe('_.throttle', ()=> {
 	});
 
 	it('should throttle function calls (mutliple tries)', done => {
-		var called = 0;
-		var func = _.throttle(()=> called++, 100);
+		let called = 0;
+		let func = _.function.throttle(()=> called++, 100);
 
 		func();
 		setTimeout(func, 200);

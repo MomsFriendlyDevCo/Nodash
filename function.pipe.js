@@ -13,10 +13,12 @@
 * @example Hack style pipes using arrays
 * _.pipe(1, [add, '%', 2]) //=3
 */
-module.exports = (value, ...funcs) => funcs.reduce((val, func) => {
-	if (Array.isArray(func)) { // Hack style syntax
-		return func[0].apply(this, func.slice(1).map(f => f === '%' ? val : f));
-	} else { // Assume regular function call
-		return func(val);
-	}
-}, value);
+export default function pipe(value, ...funcs) {
+	return funcs.reduce((val, func) => {
+		if (Array.isArray(func)) { // Hack style syntax
+			return func[0].apply(this, func.slice(1).map(f => f === '%' ? val : f));
+		} else { // Assume regular function call
+			return func(val);
+		}
+	}, value);
+}

@@ -5,9 +5,10 @@
 * @returns {Object} A shallow copy of the input object with each function run through the callback
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = (input, cb) =>
-	Object.fromEntries(
+export default function mapValues(input, cb) {
+	return Object.fromEntries(
 		Object.entries(input).map(i =>
 			[i[0], cb(i[1], i[0])]
 		)
 	);
+}

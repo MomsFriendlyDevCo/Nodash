@@ -16,36 +16,38 @@
 *   }))
 * )
 */
-module.exports = (limit, promises) => new Promise((resolve, reject) => {
-	if (!isFinite(limit)) throw new Error('First parameter must be the number of promise threads');
+export default function promiseAllLimit(limit, promises) {
+	return new Promise((resolve, reject) => {
+		if (!isFinite(limit)) throw new Error('First parameter must be the number of promise threads');
 
-	var promiseChecker = function(queue) {
-		if (!queue.promisesRemaining.length && queue.running == 0) return resolve(queue.output);
+		let promiseChecker = function(queue) {
+			if (!queue.promisesRemaining.length && queue.running == 0) return resolve(queue.output);
 
-		while (queue.promisesRemaining.length > 0 && queue.running < queue.limit) {
-			var promiseRunner = function(thisPromise, promiseIndex) {
-				queue.running++;
-				Promise.resolve(thisPromise())
-					.then(res => {
-						queue.output[promiseIndex] = res;
-						queue.completed++;
-						queue.running--;
-						// Potential to do some progress notification here:
-						// notify({completed: queue.completed, count: queue.promiseCount, limit: queue.limit});
-						promiseChecker(queue);
-					})
-					.catch(reject);
-			}(queue.promisesRemaining.shift(), queue.promiseIndex++);
-		}
-	};
+			while (queue.promisesRemaining.length > 0 && queue.running < queue.limit) {
+				let promiseRunner = function(thisPromise, promiseIndex) {
+					queue.running++;
+					Promise.resolve(thisPromise())
+						.then(res => {
+							queue.output[promiseIndex] = res;
+							queue.completed++;
+							queue.running--;
+							// Potential to do some progress notification here:
+							// notify({completed: queue.completed, count: queue.promiseCount, limit: queue.limit});
+							promiseChecker(queue);
+						})
+						.catch(reject);
+				}(queue.promisesRemaining.shift(), queue.promiseIndex++);
+			}
+		};
 
-	promiseChecker({
-		limit,
-		running: 0,
-		promiseCount: promises.length,
-		completed: 0,
-		promisesRemaining: promises,
-		output: [],
-		promiseIndex: 0,
+		promiseChecker({
+			limit,
+			running: 0,
+			promiseCount: promises.length,
+			completed: 0,
+			promisesRemaining: promises,
+			output: [],
+			promiseIndex: 0,
+		});
 	});
-});
+}

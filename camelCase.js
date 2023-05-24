@@ -5,10 +5,12 @@
 * @return {string} The input string in camelCase format
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = input => input
-	.split(/[\s\-]/)
-	.map((word, offset) => offset == 0
-		? word.toLowerCase()
-		: word.substr(0, 1).toUpperCase() + word.substr(1).toLowerCase()
-	)
-	.join('')
+export default function camelCase(input) {
+	return input
+		.split(/[\s\-]/)
+		.map((word, offset) => offset == 0
+			? word.toLowerCase()
+			: word.substr(0, 1).toUpperCase() + word.substr(1).toLowerCase()
+		)
+		.join('')
+}

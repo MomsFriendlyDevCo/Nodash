@@ -4,5 +4,6 @@
 * @returns {array} The cohersed version of input - or just input if its already an array
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = input =>
-	Array.isArray(input) ? input : new Array(input);
+export default function castArray(input) {
+	return Array.isArray(input) ? input : new Array(input);
+}

@@ -15,8 +15,8 @@
 *   }))
 * )
 */
-module.exports = promises =>
-	promises.reduce((chain, promise) =>
+export default function promiseAllSeries(promises) {
+	return promises.reduce((chain, promise) =>
 		chain.then(()=>
 			Promise.resolve(
 				typeof promise == 'function' ? promise() : promise
@@ -24,3 +24,4 @@ module.exports = promises =>
 		)
 		, Promise.resolve()
 	);
+}

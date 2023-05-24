@@ -4,4 +4,6 @@
 * @returns {Promise}
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = time => new Promise(resolve => setTimeout(resolve, time));
+export default function promiseTimeout(time) {
+	return new Promise(resolve => setTimeout(resolve, time));
+}

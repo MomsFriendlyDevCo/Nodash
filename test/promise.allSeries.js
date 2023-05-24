@@ -1,17 +1,16 @@
-var _ = require('..');
-var expect = require('chai').expect;
-var promiseAllSeries = require('../promise.allSeries');
+import _ from '#nodash';
+import {expect} from 'chai';
 
 describe('_.promise.allSeries', ()=> {
 
 	it('should run promises in series', function() {
 		this.timeout(10 * 1000);
 
-		var delays = [500, 400, 300, 200, 100, 0, 100, 200, 300, 400, 500];
-		var output = [];
+		let delays = [500, 400, 300, 200, 100, 0, 100, 200, 300, 400, 500];
+		let output = [];
 
 		return _.promise.allSeries(
-			delays.map((delay, index) => ()=> new Promise(resolve => {
+			delays.map(delay => ()=> new Promise(resolve => {
 				setTimeout(()=> {
 					output.push(delay);
 					resolve();
@@ -23,7 +22,7 @@ describe('_.promise.allSeries', ()=> {
 	});
 
 	it('should fail correctly',  function() {
-		var ran = [];
+		let ran = [];
 
 		return _.promise.allSeries(
 			[1, 2, false, 3, 4].map(val => ()=> new Promise((resolve, reject) => {

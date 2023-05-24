@@ -1,7 +1,5 @@
-var _ = require('..');
-var expect = require('chai').expect;
-var mlog = require('mocha-logger');
-var promiseAllSeries = require('../promise.allSeries');
+import _ from '#nodash';
+import {expect} from 'chai';
 
 describe('_.promise.allObject', ()=> {
 

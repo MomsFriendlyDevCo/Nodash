@@ -4,12 +4,12 @@
 * @param {number} wait Maximum time to wait before invoking the function
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = (cb, wait) => {
-	var throttleTimer;
-	var reschedule = ()=> {
+export default function functionThrottle(cb, wait) {
+	let throttleTimer;
+	let reschedule = ()=> {
 		clearTimeout(throttleTimer);
 		throttleTimer = setTimeout(cb, wait);
 	};
 
 	return ()=> reschedule();
-};
+}

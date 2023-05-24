@@ -1,4 +1,4 @@
-let RegExpEscape = require('./regexp.escape');
+import RegExpEscape from '#lib/regexp.escape';
 
 /**
 * Replace the LAST occurance of a string with another
@@ -8,7 +8,7 @@ let RegExpEscape = require('./regexp.escape');
 * @returns {string} The input string with replacements (if any)
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = function replaceLast(str, match, replace) {
+export default function replaceLast(str, match, replace) {
 	let lastMatch = Array.from(
 		str.matchAll(match instanceof RegExp ? match : new RegExp(RegExpEscape(match), 'g')),
 	).at(-1);

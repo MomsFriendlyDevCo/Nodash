@@ -8,13 +8,13 @@
 * @return {*} The traversed object
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = (item, path, value) => {
-	var target = item;
-	var pathPieces = path.split('.');
-	for (var i = 0; i < pathPieces.length - 1; i++) {
+export default function set(item, path, value) {
+	let target = item;
+	let pathPieces = path.split('.');
+	for (let i = 0; i < pathPieces.length - 1; i++) {
 		if (!target[pathPieces[i]]) target[pathPieces[i]] = {};
 		target = target[pathPieces[i]];
-	};
+	}
 	target[pathPieces[pathPieces.length -1]] = value;
 	return target;
-};
+}

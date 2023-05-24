@@ -5,4 +5,6 @@
 * @return {array} One level flatter input
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = arr => [].concat.apply([], arr);
+export default function flatten(arr) {
+	return [].concat.apply([], arr);
+}

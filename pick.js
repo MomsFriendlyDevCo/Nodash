@@ -5,8 +5,8 @@
 * @returns {Object} A shallow copy of the input object with the omitted fields omitted
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
-module.exports = (input, keys) =>
-	(
+export default function pick(input, keys) {
+	return (
 		keys instanceof Set ? Array.from(keys)
 		: Array.isArray(keys)
 		? keys : new Array(keys)
@@ -15,3 +15,4 @@ module.exports = (input, keys) =>
 			if (input[k] !== undefined) t[k] = input[k];
 			return t;
 		}, {});
+}

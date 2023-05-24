@@ -2,28 +2,50 @@
 * Export the main objet as a lookup
 * I've no idea why you would want this instead of Lodash, this is only really so that you can easily export the main object to the testkits
 */
-module.exports = {
-	castArray: require('./castArray'),
-	camelCase: require('./camelCase'),
-	flatten: require('./flatten'),
-	get: require('./get'),
-	isArary: require('./isArray'),
-	mapValues: require('./mapValues'),
-	omit: require('./omit'),
-	pick: require('./pick'),
-	pipe: require('./pipe'),
+import camelCase from '#lib/camelCase';
+import castArray from '#lib/castArray';
+import flatten from '#lib/flatten';
+import functionPipe from '#lib/function.pipe';
+import functionThrottle from '#lib/function.throttle';
+import get from '#lib/get';
+import mapValues from '#lib/mapValues';
+import omit from '#lib/omit';
+import pick from '#lib/pick';
+import promiseAllLimit from '#lib/promise.allLimit';
+import promiseAllObject from '#lib/promise.allObject';
+import promiseAllSeries from '#lib/promise.allSeries';
+import promiseTimeout from '#lib/promise.timeout';
+import regexpEscape from '#lib/regexp.escape';
+import set from '#lib/set';
+import stringCamelCase from '#lib/string.camelCase';
+import stringReplaceLast from '#lib/string.replaceLast';
+import stringStartCase from '#lib/string.startCase';
+
+export default {
+	camelCase,
+	castArray,
+	flatten,
+	function: {
+		pipe: functionPipe,
+		throttle: functionThrottle,
+	},
+	get,
+	mapValues,
+	omit,
+	pick,
 	promise: {
-		allLimit: require('./promise.allLimit'),
-		allObject: require('./promise.allObject'),
-		allSeries: require('./promise.allSeries'),
-		timeout: require('./promise.timeout'),
+		allLimit: promiseAllLimit,
+		allObject: promiseAllObject,
+		allSeries: promiseAllSeries,
+		timeout: promiseTimeout,
 	},
 	regexp: {
-		escape: require('./regexp.escape'),
+		escape: regexpEscape,
 	},
-	set: require('./set'),
+	set,
 	string: {
-		replaceLast: require('./string.replaceLast'),
+		camelCase: stringCamelCase,
+		replaceLast: stringReplaceLast,
+		startCase: stringStartCase,
 	},
-	throttle: require('./throttle'),
-};
+}

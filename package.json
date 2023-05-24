@@ -2,12 +2,19 @@
   "name": "@momsfriendlydevco/nodash",
   "version": "0.0.0",
   "description": "Minimal self-contained Lodash / generic function implementations",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
+    "lint": "eslint --ext .js .",
     "test": "mocha"
+  },
+  "type": "module",
+  "main": "index.js",
+  "imports": {
+    "#lib/*": "./*.js",
+    "#nodash": "./index.js"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./*": "./*.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +32,16 @@
   },
   "homepage": "https://github.com/MomsFriendlyDevCo/Nodash#readme",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.1.3",
-    "mocha-logger": "^1.0.6"
+    "@momsfriendlydevco/eslint-config": "^1.0.3",
+    "chai": "^4.3.7",
+    "eslint": "^8.41.0",
+    "mocha": "^10.2.0",
+    "mocha-logger": "^1.0.8"
+  },
+  "eslintConfig": {
+    "extends": "@momsfriendlydevco",
+    "parserOptions": {
+      "ecmaVersion": "latest"
+    }
   }
 }
