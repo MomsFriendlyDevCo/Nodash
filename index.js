@@ -11,6 +11,7 @@ import get from '#lib/get';
 import mapValues from '#lib/mapValues';
 import omit from '#lib/omit';
 import pick from '#lib/pick';
+import pickBy from '#lib/pickBy';
 import promiseAllLimit from '#lib/promise.allLimit';
 import promiseAllObject from '#lib/promise.allObject';
 import promiseAllSeries from '#lib/promise.allSeries';
@@ -32,7 +33,7 @@ export default {
 	get,
 	mapValues,
 	omit,
-	pick,
+	pick, pickBy,
 	promise: {
 		allLimit: promiseAllLimit,
 		allObject: promiseAllObject,
