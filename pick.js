@@ -6,7 +6,11 @@
 * @url https://github.com/MomsFriendlyDevCo/Nodash
 */
 module.exports = (input, keys) =>
-	(keys instanceof Set ? Array.from(keys) : Array.isArray(keys) ? keys : new Array(keys))
+	(
+		keys instanceof Set ? Array.from(keys)
+		: Array.isArray(keys)
+		? keys : new Array(keys)
+	)
 		.reduce((t, k) => {
 			if (input[k] !== undefined) t[k] = input[k];
 			return t;
