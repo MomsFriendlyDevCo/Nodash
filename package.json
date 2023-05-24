@@ -1,6 +1,6 @@
 {
   "name": "@momsfriendlydevco/nodash",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Minimal self-contained Lodash / generic function implementations",
   "scripts": {
     "lint": "eslint --ext .js .",
